@@ -32,6 +32,7 @@
                 <ul class="nav navbar-nav">
                     <li><a asp-page="/Index">Home</a></li>
                     <li><a asp-page="/About">About</a></li>
+                    <li><a asp-page="/Restaurants/List">Restaurants</a></li>
                     <li><a asp-page="/Contact">Contact</a></li>
                 </ul>
             </div>
@@ -41,7 +42,8 @@
     <partial name="_CookieConsentPartial" />
 
     <div class="container body-content">
-        @RenderBody()
+        @RenderBody() 
+        @RenderSection("footer", required: false);
         <hr />
         <footer>
             <p>&copy; 2019 - OdeToFood</p>
@@ -68,7 +70,7 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
-
+    <vc:restaurant-count></vc:restaurant-count>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
